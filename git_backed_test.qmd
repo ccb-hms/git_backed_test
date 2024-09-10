@@ -10,10 +10,13 @@ format: html
 1. Run `rsconnect::writeManifest()` within this project. Make sure the manifest doesn't capture any sensitive / large data!
 1. Commit your report and the manifest to the git repo
 1. Push the changes to GitHub
-1. From the Connect server main page in a browser, go `Content > Publish > Import from Git`
-1. Enter the repo URL
+1. From the on-prem Connect server [main page](https://ccb-rstudio-connect.hms.harvard.edu/connect/#/welcome) in a browser, go `Content > Publish > Import from Git`
+1. Enter the repo URL e.g. `https://github.com/ccb-hms/git_backed_test/`
+1. Select a branch and enter a title for the content
 
-Additional details for more complicated configurations [here](https://docs.posit.co/connect/user/git-backed/).
+Connect will then pull the repo contents, render the document, and present it on the Connect server. By default it checks for new commits every 15 minutes. This comment was pushed as a git commit and though I engaged in no additional interaction with the Connect server, it will end up showing up there.  
+
+Additional details for more complicated configurations (like private repos) [here](https://docs.posit.co/connect/user/git-backed/).
 
 ## Tests
 
