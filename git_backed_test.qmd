@@ -7,7 +7,7 @@ format: html
 
 1. First create a directory / RStudio project for the document
 1. Create a boilerplate version of your `report.qmd` file 
-1. Run `rsconnect::writeManifest()` within this project
+1. Run `rsconnect::writeManifest()` within this project. Make sure the manifest doesn't capture any sensitive / large data!
 1. Commit your report and the manifest to the git repo
 1. Push the changes to GitHub
 1. From the Connect server main page in a browser, go `Content > Publish > Import from Git`
