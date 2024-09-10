@@ -14,7 +14,7 @@ format: html
 1. Enter the repo URL e.g. `https://github.com/ccb-hms/git_backed_test/`
 1. Select a branch and enter a title for the content
 
-Connect will then pull the repo contents, render the document, and present it on the Connect server. By default it checks for new commits every 15 minutes. This comment was pushed as a git commit and though I engaged in no additional interaction with the Connect server, it will end up showing up there.  
+Connect will then pull the repo contents, render the document, and present it on the Connect server. By default it checks for new commits every 15 minutes. This test comment was pushed as a git commit and though I engaged in no additional interaction with the Connect server, it will end up showing up there.  
 
 Additional details for more complicated configurations (like private repos) [here](https://docs.posit.co/connect/user/git-backed/).
 
