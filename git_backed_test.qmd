@@ -42,6 +42,8 @@ It's 2.6GB on disk as a tsv. Let's try to read it in and time how long it takes:
 ```{r}
 library(data.table)
 
+setDTthreads(1) # not sure what the Connect server would default to
+
 system.time({x <- fread("/n/data1/hms/ccb/resources/git_backed_test/data/x.tsv")})
 
 x
