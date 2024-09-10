@@ -54,3 +54,10 @@ x
 
 For comparison that `fread()` takes 6.7 seconds on an O2 compute node using 1 thread.
 
+How many cores does the Connect server have? Let's see:
+
+```{r}
+parallel::detectCores()
+```
+
+
