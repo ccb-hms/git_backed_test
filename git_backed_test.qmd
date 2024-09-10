@@ -1,0 +1,51 @@
+---
+title: "git_backed_test"
+format: html
+---
+
+## Steps
+
+1. First create a directory / RStudio project for the document
+1. Create a boilerplate version of your `report.qmd` file 
+1. Run `rsconnect::writeManifest()` within this project
+1. Commit your report and the manifest to the git repo
+1. Push the changes to GitHub
+1. From the Connect server main page in a browser, go `Content > Publish > Import from Git`
+1. Enter the repo URL
+
+Additional details for more complicated configurations [here](https://docs.posit.co/connect/user/git-backed/).
+
+## Tests
+
+Let's try reading a file from `/n/data1/hms/ccb/resources/`. This is a data
+frame with two columns and 10^8^ rows. I created it like this (this chunk is not evaluated by this document):
+
+```{r}
+#| eval: false
+
+library(data.table)
+
+x = data.table(i = 1:1e8, x = rnorm(1e8))
+
+```
+
+It's pretty big so we can test the network speed between
+`/n/data1/hms/ccb/resources/` and the Connect server:
+
+```
+> object.size(x) |> format(units = "auto")
+[1] "1.1 Gb"
+```
+
+It's 2.6GB on disk as a tsv. Let's try to read it in and time how long it takes:
+
+```{r}
+library(data.table)
+
+system.time({x <- fread("/n/data1/hms/ccb/resources/git_backed_test/data/x.tsv")})
+
+x
+```
+
+For comparison that `fread()` takes 3.6 seconds on an O2 compute node.
+
