@@ -26,6 +26,7 @@ frame with two columns and 10^8^ rows. I created it like this (this chunk is not
 ```{r}
 #| eval: false
 
+library(R.utils)
 library(data.table)
 
 x = data.table(i = 1:1e8, x = rnorm(1e8))
