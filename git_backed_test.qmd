@@ -60,4 +60,14 @@ How many cores does the Connect server have? Let's see:
 parallel::detectCores()
 ```
 
+Are  directories only readable by the `hpc_ccb` group readable? I ran `chmod -R 770` on this directory:
+
+```{r}
+file.access("/n/data1/hms/ccb/resources/git_backed_test/chmod_test/test.txt",
+			mode = 2) # write permission
+file.access("/n/data1/hms/ccb/resources/git_backed_test/chmod_test/test.txt",
+			mode = 4) # read permission
+```
+
+
 
