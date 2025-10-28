@@ -768,9 +768,6 @@
     "_quarto.yml": {
       "checksum": "4fd2f1e89fd0d72d65981cda934d1a06"
     },
-    "\\": {
-      "checksum": "896fb25aae0686bfad01decd5e96d33f"
-    },
     "git_backed_test_files/libs/bootstrap/bootstrap-icons.css": {
       "checksum": "2318f137d201fbf51601fa0faba6bef7"
     },
@@ -808,7 +805,7 @@
       "checksum": "f4441ccc7d9f845c0fc4d92519cfbbd6"
     },
     "git_backed_test.qmd": {
-      "checksum": "896fb25aae0686bfad01decd5e96d33f"
+      "checksum": "523215a0ad6da475631886e9c80f7e65"
     }
   },
   "users": null
