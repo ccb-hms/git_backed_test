@@ -26,7 +26,6 @@ frame with two columns and 10^8^ rows. I created it like this (this chunk is not
 ```{r}
 #| eval: false
 
-library(R.utils)
 library(data.table)
 
 x = data.table(i = 1:1e8, x = rnorm(1e8))
@@ -41,19 +40,19 @@ It's pretty big so we can test the network speed between
 [1] "1.1 Gb"
 ```
 
-It's 1.1GB on disk as a gzipped tsv. Let's try to read it in and time how long it takes:
+It's 2.6GB on disk as a tsv. Let's try to read it in and time how long it takes:
 
 ```{r}
 library(data.table)
 
 setDTthreads(1) # not sure what the Connect server would default to
 
-system.time({x <- fread("/n/data1/hms/ccb/resources/git_backed_test/data/x.tsv.gz")})
+system.time({x <- fread("/n/data1/hms/ccb/resources/git_backed_test/data/x.tsv")})
 
 x
 ```
 
-For comparison that `fread()` takes 22.1 seconds on an O2 compute node using 1 thread.
+For comparison that `fread()` takes 6.7 seconds on an O2 compute node using 1 thread.
 
 How many cores does the Connect server have? Let's see:
 
