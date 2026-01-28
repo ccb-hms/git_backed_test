@@ -98,6 +98,8 @@ library(dbplyr)
 mdb = dbConnect(RSQLite::SQLite(),
                 "/n/data1/hms/ccb/resources/git_backed_test/tmp.sqlite")
 
+datdb = tbl(mdb, "dat")
+
 head(datdb) |> collect()
 ```
 
