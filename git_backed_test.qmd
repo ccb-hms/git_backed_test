@@ -69,5 +69,38 @@ file.access("/n/data1/hms/ccb/resources/git_backed_test/chmod_test/test.txt",
 			mode = 4) # read permission
 ```
 
+## DB connections
+
+Can it read from a SQLite db on O2?
+
+```{r}
+library(RSQLite)
+library(dplyr)
+library(dbplyr)
+
+# # Setup
+# dat = data.frame(id = paste("x", 1:1e7, sep = ""),
+#                 x = rnorm(1e7)) |>
+#     collapse::roworderv(neworder = sample.int(1e7))
+# 
+# mdb = dbConnect(RSQLite::SQLite(), "/n/data1/hms/ccb/resources/git_backed_test/tmp.sqlite")
+# 
+# dbWriteTable(mdb, "dat", dat)
+# 
+# dbExecute(mdb, "CREATE INDEX idx_id ON dat(id)")
+# 
+# datdb = tbl(mdb, "dat")
+# 
+# head(datdb) |> collect()
+# 
+# dbDisconnect(mdb)
+
+mdb = dbConnect(RSQLite::SQLite(),
+                "/n/data1/hms/ccb/resources/git_backed_test/tmp.sqlite")
+
+head(datdb) |> collect()
+```
+
+
 
 
